@@ -1,0 +1,640 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="http://txt2tags.org">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>ELC1067 - Laboratório de Programação II</TITLE>
+</HEAD><BODY BGCOLOR="white" TEXT="black">
+<CENTER>
+<H1>ELC1067 - Laboratório de Programação II</H1>
+<FONT SIZE="4"><I>Turmas SI1 e SI2, primeiro semestre de 2016</I></FONT><BR>
+<FONT SIZE="4">Última atualização: Sun Mar  6 14:02:08 2016	</FONT>
+</CENTER>
+
+<P></P>
+<HR NOSHADE SIZE=1>
+<P></P>
+
+  <OL>
+  <LI><A HREF="#toc1">Trabalhos</A>
+    <UL>
+    <LI><A HREF="#toc2">1.1. Primeiro trabalho</A>
+    </UL>
+  <LI><A HREF="#toc3">Dicas C++</A>
+    <UL>
+    <LI><A HREF="#toc4">2.1. Ola mundo</A>
+    <LI><A HREF="#toc5">2.2. Compilação</A>
+    <LI><A HREF="#toc6">2.3. Linha de comando</A>
+    <LI><A HREF="#toc7">2.4. Variáveis</A>
+      <UL>
+      <LI><A HREF="#toc8">2.4.1. auto</A>
+      <LI><A HREF="#toc9">2.4.2. Inicialização padrão</A>
+      <LI><A HREF="#toc10">2.4.3. Casting (conversão)</A>
+      </UL>
+    <LI><A HREF="#toc11">2.5. Passagem de parâmetros</A>
+      <UL>
+      <LI><A HREF="#toc12">2.5.1. Referência</A>
+      </UL>
+    <LI><A HREF="#toc13">2.6. Estrutura de dados</A>
+    <LI><A HREF="#toc14">2.7. Entrada e saída</A>
+    <LI><A HREF="#toc15">2.8. Tratamento de erros</A>
+    <LI><A HREF="#toc16">2.9. Alocação de memória</A>
+      <UL>
+      <LI><A HREF="#toc17">2.9.1. New e delete</A>
+      <LI><A HREF="#toc18">2.9.2. Smart pointers</A>
+      <LI><A HREF="#toc19">2.9.3. Mover ao invés de copiar</A>
+      </UL>
+    <LI><A HREF="#toc20">2.10. Números aleatórios</A>
+    <LI><A HREF="#toc21">2.11. Tempo</A>
+    <LI><A HREF="#toc22">2.12. Namespaces</A>
+    <LI><A HREF="#toc23">2.13. Funções lambda</A>
+    <LI><A HREF="#toc24">2.14. Links úteis</A>
+    </UL>
+  <LI><A HREF="#toc25">Depuração</A>
+  </OL>
+
+<P></P>
+<HR NOSHADE SIZE=1>
+<P></P>
+<P>
+<B>Professor:</B>: João V. F. Lima
+</P>
+<P>
+<B>Horário:</B> terças e quintas, 10h30
+</P>
+<P>
+<B>Programa da disciplina:</B> 
+</P>
+<P>
+<B>Notas:</B> 
+</P>
+
+<A NAME="toc1"></A>
+<H1>1. Trabalhos</H1>
+
+<A NAME="toc2"></A>
+<H2>1.1. Primeiro trabalho</H2>
+
+<P>
+O programa fará leitura de dois arquivos texto: <CODE>alunos.txt</CODE> e <CODE>notas.txt</CODE>.
+O <CODE>alunos.txt</CODE> terá o formato:
+</P>
+
+<PRE>
+  200300000 Joao Lima
+  201512345 Fulano de Tal
+  201554321 Michael Jackson de Lima
+  201000013 Lady Gaga de Fulano
+</PRE>
+
+<P>
+O outro arquivo <CODE>notas.txt</CODE> terá o formato:
+</P>
+
+<PRE>
+  200300000 6.6 9.5  
+  201512345 7.7 5.0
+  201554321 10 9.9
+  201000013 5.5 1.1
+</PRE>
+
+<P>
+O objetivo deste T1 é <B>buscar alunos pelo nome e imprimir a média e o nome completo dos encontrados</B>.
+O nome será passado pela linha de comando. Por exemplo, procurando por alunos Lima:
+</P>
+
+<PRE>
+  $ ./t1 Lima
+  8.05 Joao Lima
+  9.95 Michael Jackson de Lima
+</PRE>
+
+<P>
+Nas dicas abaixo, procure sobre linha de comando, estrutura de dado e entrada e saída.
+</P>
+
+<A NAME="toc3"></A>
+<H1>2. Dicas C++</H1>
+
+<P>
+Nesse semestre, vamos utilizar a linguagem C++ na disciplina.
+</P>
+<P>
+<B>IMPORTANTE: A parte de orientação a objetos será ignorada.</B>
+</P>
+
+<A NAME="toc4"></A>
+<H2>2.1. Ola mundo</H2>
+
+<PRE>
+  #include &lt;iostream&gt;
+  
+  int main(void)
+  {
+  	std::string mensagem{"Ola mundo!"}
+  	// isso é um comentário
+  	std::cout &lt;&lt; "Saida: " &lt;&lt; mensagem &lt;&lt; std::endl;
+  }
+</PRE>
+
+<P>
+O que notamos nesse exemplo:
+</P>
+
+<UL>
+<LI><CODE>iostream</CODE> para entrada e saída básica
+<LI><CODE>std::string</CODE> é uma estrutura (<I>classe</I>) C++ para string
+<LI><CODE>std::cout</CODE> é a saída padrão
+<LI><CODE>std::endl</CODE> é uma nova linha (<CODE>\n</CODE>)
+</UL>
+
+<A NAME="toc5"></A>
+<H2>2.2. Compilação</H2>
+
+<P>
+Semelhante ao C, pode-se usar o GCC (<CODE>g++</CODE>) e Clang (<CODE>clang++</CODE>).
+Em ambos o C++11 pode não ser padrão, então precisamos passar a opção
+<B>-std=c++11</B>:
+</P>
+
+<PRE>
+  g++ -std=c++11 -O2 -Wall -g  -o ola ola.cpp
+</PRE>
+
+<P>
+<B>DICA:</B> Clang mostra erros de compilação de forma mais amigável, além de ser mais 
+eficiente que o GCC.
+</P>
+
+<A NAME="toc6"></A>
+<H2>2.3. Linha de comando</H2>
+
+<A NAME="toc7"></A>
+<H2>2.4. Variáveis</H2>
+
+<P>
+Declarações em C++ são semelhantes em C, com algumas melhorias.
+</P>
+
+<A NAME="toc8"></A>
+<H3>2.4.1. auto</H3>
+
+<P>
+Pode-se usar <B>auto</B> quando o tipo é deduzido pelo compilador como em:
+</P>
+
+<PRE>
+  auto x = 1;          // inteiro
+  auto y = 2.0;        // double
+  auto teste = true;   // booleano
+  
+  // i abaixo é um inteiro
+  for(auto i= 0; i &lt; 10; i++)
+  	std::cout &lt;&lt; "Valor: " &lt;&lt; i &lt;&lt; std::endl;
+</PRE>
+
+<A NAME="toc9"></A>
+<H3>2.4.2. Inicialização padrão</H3>
+
+<A NAME="toc10"></A>
+<H3>2.4.3. Casting (conversão)</H3>
+
+<P>
+C++ apresenta quatro tipos de conversão:
+</P>
+
+<UL>
+<LI><B>static_cast</B> converte entre tipos relacionados como <CODE>int</CODE> para <CODE>char</CODE>,
+ou <CODE>double*</CODE> para <CODE>int*</CODE>.
+<LI><B>reinterpret_cast</B> converte tipos não relacionados como inteiro para ponteiro, ou vice-versa.
+<LI><B>const_cast</B> converte tipos que deferem quando são <CODE>const</CODE> ou <CODE>volatile</CODE>.
+<LI><B>dynamic_cast</B> (<I>não usado aqui</I>) converte com checagem de tipo em tempo
+  de execução.
+</UL>
+
+<P>
+Alguns exemplos:
+</P>
+
+<PRE>
+  int num = 97;                        // inteiro
+  char letra = static_cast&lt;char&gt;(num); // agora letra A
+  
+  char *dados = new char[100];          // 100 chars alocados
+  int* vetor = reinterpret_cast&lt;int*&gt;(dados); // mudei agora para int
+</PRE>
+
+<A NAME="toc11"></A>
+<H2>2.5. Passagem de parâmetros</H2>
+
+<A NAME="toc12"></A>
+<H3>2.5.1. Referência</H3>
+
+<P>
+Passagem por referência possibilita passar variáveis por 
+<I>referência</I> ao invés de valor ou ponteiro.
+No exemplo abaixo, tem-se a opção de valor e referência <CODE>&amp;</CODE>:
+</P>
+
+<PRE>
+  void f(int val, int&amp; ref)
+  {
+      val++;   // incrementa a cópia local de val
+      ref++;   // incrementa realmente a variável
+  }
+</PRE>
+
+<P>
+<B>IMPORTANTE</B>: evite usar passagem por referência porque deixa o programa
+mais difícil de entender.
+Use apenas quando queremos evitar uma cópia e não vamos alterar a variável (<CODE>const</CODE>), 
+como por exemplo um vetor ou uma string:
+</P>
+
+<PRE>
+  void imprimir(const std::string&amp; texto) 
+  {
+      std::cout &lt;&lt; texto &lt;&lt; std::endl; // não altera variável
+  }
+</PRE>
+
+<A NAME="toc13"></A>
+<H2>2.6. Estrutura de dados</H2>
+
+<P>
+A linguagem oferece estruturas semelhantes ao C chamadas <I>plain old data</I> (POD),
+ou seja, sem funcionalidades de orientação a objetos do C++.
+O uso de estruturas C++ oferece algumas vantagens em relação ao C para desta
+disciplina (<I>eu acho</I>):
+</P>
+
+<UL>
+<LI>declaração de variável não precisa da palavra <B>struct</B>.
+<LI>pode-se usar inicialização padrão, e incluir métodos dentro da estrutura.
+</UL>
+
+<P>
+Veja o exemplo:
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  #include &lt;cmath&gt;
+  
+  struct Ponto {
+      float x;
+      float y;
+  
+      // zera o ponto 
+      void zera(void) {
+          x = 0.0f;
+          y = 0.0f;
+      }
+  
+      // distância deste ponto (x, y) até p1
+      float distancia(Ponto&amp; p1) const {
+          return std::sqrt( std::pow((x-p1.x), 2) + std::pow((y-p1.y), 2) );
+      }
+  };
+  
+  int main(void)
+  {
+      Ponto p1 {1.0, 1.0};
+      Ponto p2;
+      p2.zera();
+      p2.x = 19.0;
+      p2.y = 20.0;
+  
+      auto distancia = p1.distancia(p2);
+      std::cout &lt;&lt; "Distancia: " &lt;&lt; distancia &lt;&lt; std::endl;
+  }
+</PRE>
+
+<P>
+Temos duas funções da estrutura <CODE>Ponto</CODE>: <CODE>zera()</CODE> e <CODE>distancia()</CODE>.
+As duas são da estrutura e manipulam <CODE>(x,y)</CODE> de cada variável.
+</P>
+<P>
+Note que foi utilizada a inicialização padrão, iniciando os campos de <CODE>Ponto</CODE> em ordem:
+</P>
+
+<PRE>
+  Ponto p1 {1.0, 1.0};
+</PRE>
+
+<A NAME="toc14"></A>
+<H2>2.7. Entrada e saída</H2>
+
+<P>
+As operações são efetuadas por <I>streaming</I> ou fluxo onde dados são lidos
+ou escritos em sequência. Para tanto, C++ tem os streamings:
+</P>
+
+<UL>
+<LI><B>std::ifstream</B> para leitura.
+<LI><B>std::ofstream</B> para escrita.
+</UL>
+
+<P>
+Neste exemplo são lidos dois números (<CODE>&gt;&gt;</CODE>) e escritos dois (<CODE>&lt;&lt;</CODE>).
+Note que a operação de <B>saída</B> é <CODE>&lt;&lt;</CODE> (esquerda) e <B>entrada</B> é <CODE>&gt;&gt;</CODE> (direita).
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  #include &lt;fstream&gt;
+  
+  int main(void)
+  {
+      int n1, n2;
+      std::ifstream entrada {"entrada.txt"};
+      std::ofstream saida {"saida.txt"};
+      entrada &gt;&gt; n1 &gt;&gt; n2;
+      saida &lt;&lt; n1 &lt;&lt; " " &lt;&lt; n2 &lt;&lt; std::endl;
+      return 0;
+  }
+</PRE>
+
+<P>
+Se queremos ler <CODE>n</CODE> números, precisamos testar se o arquivo terminou
+ou <I>end-of-file</I> (EOF). Basta usar a função <CODE>eof()</CODE>:
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  #include &lt;fstream&gt;
+  
+  int main(void)
+  {
+      int n;
+      std::ifstream entrada {"numeros.txt"};
+      std::ofstream saida {"saida.txt"};
+  
+      if(entrada.is_open() == false)
+          throw std::runtime_error{"Nao foi possivel abrir arquivo!"};
+  
+      while(entrada.eof() == false){
+          entrada &gt;&gt; n;
+          saida &lt;&lt; n &lt;&lt; std::endl;
+      }
+  
+      entrada.close();
+      saida.close();
+      return 0;
+  }
+</PRE>
+
+<A NAME="toc15"></A>
+<H2>2.8. Tratamento de erros</H2>
+
+<P>
+O tratamento de erros em C++ pode ser feito com excessões.
+Alguns códigos mostram uma palavra-chave <CODE>throw</CODE> usada em C++ para criar uma
+excessão ou erro em tempo de execução.
+Uma  excessão padrão é a <CODE>std::runtime_error</CODE>.
+</P>
+<P>
+Um exemplo é um programa que só aceita números positivos:
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  
+  int main(void)
+  {
+      int n;
+      std::cout &lt;&lt; "Digite um numero: ";
+      std::cin &gt;&gt; n;
+      if(n &lt; 0)
+          throw std::runtime_error {"Digite apenas numeros positivos!"};
+      std::cout &lt;&lt; n &lt;&lt; std::endl;
+      return 0;
+  }
+</PRE>
+
+<P>
+Tratar excessões depende da estrutura <CODE>try/catch</CODE>, onde
+o bloco <CODE>try</CODE>  é o código protegido e <CODE>catch</CODE> é executado
+somente quando ocorrer uma excessão.
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  
+  int main(void)
+  {
+      try {
+          throw std::runtime_error{"um erro qualquer"};   // cria erro
+      } catch(std::exception&amp; e) {
+          std::cout &lt;&lt; "ERRO: " &lt;&lt; e.what() &lt;&lt; std::endl; // trata excessão
+          throw;                                          // recria
+      }
+      return 0;
+  }
+</PRE>
+
+<A NAME="toc16"></A>
+<H2>2.9. Alocação de memória</H2>
+
+<A NAME="toc17"></A>
+<H3>2.9.1. New e delete</H3>
+
+<P>
+A linguagem oferece a função <CODE>new</CODE> e <CODE>delete</CODE> para alocar e
+liberar memória, respectivamente.
+</P>
+
+<PRE>
+  int* ptr1 = nullptr;       // nullptr é NULL em C++
+  int* ptr2 {nullptr};       // inicializador padrão
+  
+  auto num = new int;       // aloca inteiro
+  *num = 33;
+  delete num;               // libera memória
+  
+  auto vetor = new int[10]; // vetor de 10 números
+  delete[] vetor;           // libera um vetor 
+  
+  int* vetor {new int[10]}; // outra forma
+  delete[] vetor;
+</PRE>
+
+<A NAME="toc18"></A>
+<H3>2.9.2. Smart pointers</H3>
+
+<P>
+O suporte a <I>smart pointers</I> auxilia no gerênciamento de memória. 
+Ele elimina a necessidade de liberar memória (<I>delete</I>), sendo liberada automaticamente
+quando o programa não usa mais.
+</P>
+<P>
+Nós veremos o uso dos ponteiros <B>unique_ptr</B>, que armazena 
+um ponteiro em modo exclusivo (único dono).
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  #include &lt;memory&gt;
+  
+  int main(void)
+  {
+      auto ptr1 = std::unique_ptr&lt;int&gt; {new int};           // ponteiro int
+      *ptr1 = 13;                                           // inicializa valor
+      std::cout &lt;&lt; ptr1.get() &lt;&lt; " " &lt;&lt; *ptr1 &lt;&lt; std::endl; // imprime o endereço e valor
+  
+      auto vetor = std::unique_ptr&lt;int[]&gt; {new int[10]};    // vetor de int (int[])
+      for(auto i= 0; i &lt; 10; i++)
+          vetor[i] = i;
+  
+      // sem necessidade de delete: quando terminar a memória é liberada
+      return 0;
+  }
+</PRE>
+
+<P>
+Pode-se também retornar um <B>unique_ptr</B> de uma função:
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  #include &lt;memory&gt;
+  
+  std::unique_ptr&lt;float[]&gt; 
+  foo(int n)
+  {
+      std::unique_ptr&lt;float[]&gt; novo {new float[n]};
+      return novo;
+  }
+  
+  int main(void)
+  {
+      auto vetor = foo(10);
+      for(auto i= 0; i &lt; 10; i++){
+          vetor[i] = static_cast&lt;float&gt;(i)/10;
+          std::cout &lt;&lt; i &lt;&lt; " -&gt; " &lt;&lt; vetor[i] &lt;&lt; std::endl;
+      }
+      return 0;
+  }
+</PRE>
+
+<P>
+Porém, <B>unique_ptr não suporta operação de cópia</B> de variável porque o acesso
+é modo exclusivo, ou seja, único dono.
+C++11 proporciona o <B>operador move</B> que move o conteúdo ao invés de copiar:
+</P>
+
+<PRE>
+  auto ptr1 = std::unique_ptr&lt;int&gt; {new int};         // aloca ponteiro int
+  auto copia = std::move(ptr1);                       // move para copia
+  std::cout &lt;&lt; "Ptr1: " &lt;&lt; ptr1.get() &lt;&lt; std::endl;   // saída: 0x0 (nullptr)
+  std::cout &lt;&lt; "Copia: " &lt;&lt; copia.get() &lt;&lt; std::endl; // saída: endereço do ponteiro alocado
+</PRE>
+
+<A NAME="toc19"></A>
+<H3>2.9.3. Mover ao invés de copiar</H3>
+
+<P>
+Como dito anteriormente, C++11 proporciona o <B>operador move</B> que move o
+conteúdo ao invés de copiar e deixa a estrutura antiga (<I>objeto</I>) vazio.
+Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::move</CODE>:
+</P>
+
+<PRE>
+  std::string str1 {"Texto"};                    // cria string
+  std::string copia = std::move(str1);           // move para copia
+  std::cout &lt;&lt; "String 1: " &lt;&lt; str1 &lt;&lt; std::endl; // saida vazia
+  std::cout &lt;&lt; "Copia: " &lt;&lt; copia &lt;&lt; std::endl;   // saida: "Texto"
+</PRE>
+
+<A NAME="toc20"></A>
+<H2>2.10. Números aleatórios</H2>
+
+<PRE>
+  #include &lt;iostream&gt;
+  #include &lt;random&gt;
+  
+  int main(void)
+  {
+      // numeros aleatórios de 0 até 100
+      auto rand = std::bind(std::uniform_int_distribution&lt;int&gt;{0,100},
+          std::default_random_engine{});   
+      for(auto i= 0; i &lt; 10; i++){
+          std::cout &lt;&lt; rand() &lt;&lt; std::endl;
+      }
+      return 0;
+  }
+</PRE>
+
+<A NAME="toc21"></A>
+<H2>2.11. Tempo</H2>
+
+<PRE>
+  #include &lt;iostream&gt;
+  #include &lt;vector&gt;
+  #include &lt;chrono&gt;
+  
+  // elimina uso do std:: no programa
+  using namespace std;
+  
+  int main(void)
+  {
+    auto inicio = chrono::system_clock::now();
+    vector&lt;int&gt; vetor(10000);
+    for(auto&amp; i : vetor) i = 33;
+    auto fim = chrono::system_clock::now();
+    
+    // tempo em microsegundos 
+    auto tempo = chrono::duration_cast&lt;chrono::microseconds&gt;(fim-inicio).count();
+    cout &lt;&lt; "Tempo (us): " &lt;&lt; std::fixed &lt;&lt; tempo &lt;&lt; endl;
+    return 0;
+  }
+</PRE>
+
+<A NAME="toc22"></A>
+<H2>2.12. Namespaces</H2>
+
+<P>
+Namespaces em C++ criam <I>escopos nomeados</I>  e aumenta a modularidade do código.
+A <CODE>std</CODE> é o namespace padrão do C++.
+</P>
+<P>
+No exemplo abaixo, definimos um namespace com uma função e uso:
+</P>
+
+<PRE>
+  namespace Uteis {
+  	void foo(void) {
+  		std::cout &lt;&lt; "Funcao foo aqui" &lt;&lt; std::endl;
+  	}
+  }
+  
+  // usando a função assim
+  Uteis::foo();
+</PRE>
+
+<A NAME="toc23"></A>
+<H2>2.13. Funções lambda</H2>
+
+<A NAME="toc24"></A>
+<H2>2.14. Links úteis</H2>
+
+<UL>
+<LI>Referência para C++/C  <A HREF="http://pt.cppreference.com">http://pt.cppreference.com</A>
+<LI>Dicas importantes de C <A HREF="https://matt.sh/howto-c">https://matt.sh/howto-c</A>
+<LI>Formatar código com clang-format <A HREF="http://clang.llvm.org/docs/ClangFormat.html">http://clang.llvm.org/docs/ClangFormat.html</A>
+<LI>Dicas de formatação <A HREF="http://llvm.org/docs/CodingStandards.html">http://llvm.org/docs/CodingStandards.html</A>
+<LI>Sobre C++11 <A HREF="http://herbsutter.com/elements-of-modern-c-style/">http://herbsutter.com/elements-of-modern-c-style/</A>
+</UL>
+
+<A NAME="toc25"></A>
+<H1>3. Depuração</H1>
+
+<P>
+Texto.
+</P>
+
+<HR NOSHADE SIZE=1>
+
+<!-- html code generated by txt2tags 2.6 (http://txt2tags.org) -->
+<!-- cmdline: txt2tags index.t2t -->
+</BODY></HTML>

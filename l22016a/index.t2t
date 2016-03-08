@@ -8,7 +8,7 @@ Turmas SI1 e SI2, primeiro semestre de 2016
 
 **Professor:**: João V. F. Lima
 
-**Horário:** terças e quintas, 10h30
+**Horário:** terças e quintas, 10h30, sala 334
 
 **Programa da disciplina:** 
 
@@ -41,6 +41,32 @@ $ ./t1 Lima
 ```
 Nas dicas abaixo, procure sobre linha de comando, estrutura de dado e entrada e saída.
 
+**ENTREGA: 14/03/2016**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T1
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
+
+**Regras:**
+- Usar somente C++!
+- Podem utilizar ``std::vector``.
+- Devem fazer uso de estruturas de dados.
+- Não compila, zero.
+- Plágio, zero.
+
+
+== Segundo trabalho ==
+
+
+
+== Entrega de trabalhos ==[entrega]
+Crie um diretório para os fontes, por exemplo ``t1-LOGIN`` sendo 
+``LOGIN`` seu login de email e do NCC/UFSM.
+Para compactar o diretório use o comando:
+```
+$ tar -cvzf t1-LOGIN.tgz t1-LOGIN/
+```
 
 
 = Dicas C++ = 
@@ -506,7 +532,7 @@ Uteis::foo();
 
 = Depuração =
 
-Texto.
+
 
 --------------------------------------------------------
 Site feito com txt2tags (http://txt2tags.org/).

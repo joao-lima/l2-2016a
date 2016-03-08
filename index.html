@@ -8,7 +8,7 @@
 <CENTER>
 <H1>ELC1067 - Laboratório de Programação II</H1>
 <FONT SIZE="4"><I>Turmas SI1 e SI2, primeiro semestre de 2016</I></FONT><BR>
-<FONT SIZE="4">Última atualização: Tue Mar  8 08:44:59 2016	</FONT>
+<FONT SIZE="4">Última atualização: Tue Mar  8 08:53:31 2016	</FONT>
 </CENTER>
 
 <P></P>
@@ -396,6 +396,41 @@ ou <I>end-of-file</I> (EOF). Basta usar a função <CODE>eof()</CODE>:
   
       entrada.close();
       saida.close();
+      return 0;
+  }
+</PRE>
+
+<P>
+Caso precisamos ler algumas variáveis e depois o resto da linha,
+podemos usar  <CODE>std::getline</CODE> que lê tudo até o final da linha em 
+uma <CODE>std::string</CODE>. 
+Nesse exemplo, usa-se a função para ler matrícula e nome de um aluno
+do arquivo <CODE>alunos.txt</CODE>:
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  #include &lt;fstream&gt;
+  #include &lt;vector&gt;
+  
+  struct Aluno {
+      int matricula;
+      std::string nome;
+  };
+  
+  int main(void)
+  {
+      int matricula;
+      std::string nome;
+      std::vector&lt;Aluno&gt; alunos;             // vetor de alunos
+      std::ifstream entrada {"alunos.txt"};
+      while( entrada &gt;&gt; matricula ) {        // le matricula por linha
+          std::getline(entrada, nome);       // le resto da linha (nome)
+          alunos.push_back( Aluno{matricula, nome} ); // adiciona no vetor
+      }
+  
+      for(Aluno&amp; v: alunos)
+          std::cout &lt;&lt; v.matricula &lt;&lt; " -&gt; " &lt;&lt; v.nome &lt;&lt; std::endl;
       return 0;
   }
 </PRE>

@@ -265,6 +265,38 @@ int main(void)
 }
 ```
 
+Caso precisamos ler algumas variáveis e depois o resto da linha,
+podemos usar  ``std::getline`` que lê tudo até o final da linha em 
+uma ``std::string``. 
+Nesse exemplo, usa-se a função para ler matrícula e nome de um aluno
+do arquivo ``alunos.txt``:
+```
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+struct Aluno {
+    int matricula;
+    std::string nome;
+};
+
+int main(void)
+{
+    int matricula;
+    std::string nome;
+    std::vector<Aluno> alunos;             // vetor de alunos
+    std::ifstream entrada {"alunos.txt"};
+    while( entrada >> matricula ) {        // le matricula por linha
+        std::getline(entrada, nome);       // le resto da linha (nome)
+        alunos.push_back( Aluno{matricula, nome} ); // adiciona no vetor
+    }
+
+    for(Aluno& v: alunos)
+        std::cout << v.matricula << " -> " << v.nome << std::endl;
+    return 0;
+}
+```
+
 == Tratamento de erros ==
 % TODO ver excessão
 O tratamento de erros em C++ pode ser feito com excessões.

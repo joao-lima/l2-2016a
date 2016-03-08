@@ -102,7 +102,17 @@ for(auto i= 0; i < 10; i++)
 
 
 === Inicialização padrão ===
+É uma forma de padronizar a inicialização de variáveis em C++ usando **{}**.
+Por exemplo:
+```
+double x {1.0};                 // declara um double
+int    a[] {1, 2, 3, 4};        // vetor com 4 elementos sem = 
+int    b[] = {1, 2, 3, 4};      // mesma coisa
+std::string nome {"Meu nome"} ; // uma string
+```
 
+
+**ATENÇÃO:** não funciona com **auto**.
 
 
 === Casting (conversão) ===
@@ -442,9 +452,9 @@ A ``std`` é o namespace padrão do C++.
 No exemplo abaixo, definimos um namespace com uma função e uso:
 ```
 namespace Uteis {
-	void foo(void) {
-		std::cout << "Funcao foo aqui" << std::endl;
-	}
+    void foo(void) {
+        std::cout << "Funcao foo aqui" << std::endl;
+    }
 }
 
 // usando a função assim
@@ -467,3 +477,4 @@ Uteis::foo();
 Texto.
 
 --------------------------------------------------------
+Site feito com txt2tags (http://txt2tags.org/).

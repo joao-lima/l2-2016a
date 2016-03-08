@@ -39,7 +39,11 @@ $ ./t1 Lima
 8.05 Joao Lima
 9.95 Michael Jackson de Lima
 ```
-Nas dicas abaixo, procure sobre linha de comando, estrutura de dado e entrada e saída.
+Arquivos  de entrada exemplo: [alunos.txt arquivos/alunos.txt],
+[notas.txt arquivos/notas.txt].
+
+Nas dicas abaixo, procure sobre [linha de comando #cxx_argv],
+[estrutura de dados #cxx_struct] e [entrada e saída #cxx_io].
 
 **ENTREGA: 14/03/2016**
 - **Email: jvlima+elc1067 em inf.ufsm.br**
@@ -106,7 +110,24 @@ eficiente que o GCC.
 
 
 
-== Linha de comando ==
+== Linha de comando ==[cxx_argv]
+Para ler os parâmetros da linha de comando, use os
+parâmetros da ``main`` **argc** e **argv**.
+O exemplo abaixo imprime todos os parâmetros passados:
+```
+#include <iostream>
+
+// argc é o número de parâmetros passados
+// argv é um vetor de strings com os valores
+int main(int argc, char **argv)
+{
+    for(auto i= 0; i < argc; i++){
+        std::cout << "Param " << i << " valor -> "
+            << argv[i] << std::endl;
+    }
+    return 0;
+}
+```
 
 
 == Variáveis ==
@@ -190,7 +211,7 @@ void imprimir(const std::string& texto)
 ```
 
 
-== Estrutura de dados ==
+== Estrutura de dados ==[cxx_struct]
 A linguagem oferece estruturas semelhantes ao C chamadas //plain old data// (POD),
 ou seja, sem funcionalidades de orientação a objetos do C++.
 O uso de estruturas C++ oferece algumas vantagens em relação ao C para desta
@@ -242,7 +263,7 @@ Ponto p1 {1.0, 1.0};
 ```
 
 
-== Entrada e saída ==
+== Entrada e saída ==[cxx_io]
 As operações são efetuadas por //streaming// ou fluxo onde dados são lidos
 ou escritos em sequência. Para tanto, C++ tem os streamings:
 - **std::ifstream** para leitura.

@@ -8,7 +8,7 @@
 <CENTER>
 <H1>ELC1067 - Laboratório de Programação II</H1>
 <FONT SIZE="4"><I>Turmas SI1 e SI2, primeiro semestre de 2016</I></FONT><BR>
-<FONT SIZE="4">Última atualização: Tue Mar  8 09:13:02 2016	</FONT>
+<FONT SIZE="4">Última atualização: Tue Mar  8 09:25:43 2016	</FONT>
 </CENTER>
 
 <P></P>
@@ -26,7 +26,7 @@
     <UL>
     <LI><A HREF="#toc6">2.1. Ola mundo</A>
     <LI><A HREF="#toc7">2.2. Compilação</A>
-    <LI><A HREF="#toc8">2.3. Linha de comando</A>
+    <LI><A HREF="#cxx_argv">2.3. Linha de comando</A>
     <LI><A HREF="#toc9">2.4. Variáveis</A>
       <UL>
       <LI><A HREF="#toc10">2.4.1. auto</A>
@@ -37,8 +37,8 @@
       <UL>
       <LI><A HREF="#toc14">2.5.1. Referência</A>
       </UL>
-    <LI><A HREF="#toc15">2.6. Estrutura de dados</A>
-    <LI><A HREF="#toc16">2.7. Entrada e saída</A>
+    <LI><A HREF="#cxx_struct">2.6. Estrutura de dados</A>
+    <LI><A HREF="#cxx_io">2.7. Entrada e saída</A>
     <LI><A HREF="#toc17">2.8. Tratamento de erros</A>
     <LI><A HREF="#toc18">2.9. Alocação de memória</A>
       <UL>
@@ -112,7 +112,12 @@ O nome será passado pela linha de comando. Por exemplo, procurando por alunos L
 </PRE>
 
 <P>
-Nas dicas abaixo, procure sobre linha de comando, estrutura de dado e entrada e saída.
+Arquivos  de entrada exemplo: <A HREF="arquivos/alunos.txt">alunos.txt</A>,
+<A HREF="arquivos/notas.txt">notas.txt</A>.
+</P>
+<P>
+Nas dicas abaixo, procure sobre <A HREF="#cxx_argv">linha de comando</A>,
+<A HREF="#cxx_struct">estrutura de dados</A> e <A HREF="#cxx_io">entrada e saída</A>.
 </P>
 <P>
 <B>ENTREGA: 14/03/2016</B>
@@ -205,8 +210,29 @@ Em ambos o C++11 pode não ser padrão, então precisamos passar a opção
 eficiente que o GCC.
 </P>
 
-<A NAME="toc8"></A>
+<A NAME="cxx_argv"></A>
 <H2>2.3. Linha de comando</H2>
+
+<P>
+Para ler os parâmetros da linha de comando, use os
+parâmetros da <CODE>main</CODE> <B>argc</B> e <B>argv</B>.
+O exemplo abaixo imprime todos os parâmetros passados:
+</P>
+
+<PRE>
+  #include &lt;iostream&gt;
+  
+  // argc é o número de parâmetros passados
+  // argv é um vetor de strings com os valores
+  int main(int argc, char **argv)
+  {
+      for(auto i= 0; i &lt; argc; i++){
+          std::cout &lt;&lt; "Param " &lt;&lt; i &lt;&lt; " valor -&gt; "
+              &lt;&lt; argv[i] &lt;&lt; std::endl;
+      }
+      return 0;
+  }
+</PRE>
 
 <A NAME="toc9"></A>
 <H2>2.4. Variáveis</H2>
@@ -313,7 +339,7 @@ como por exemplo um vetor ou uma string:
   }
 </PRE>
 
-<A NAME="toc15"></A>
+<A NAME="cxx_struct"></A>
 <H2>2.6. Estrutura de dados</H2>
 
 <P>
@@ -377,7 +403,7 @@ Note que foi utilizada a inicialização padrão, iniciando os campos de <CODE>P
   Ponto p1 {1.0, 1.0};
 </PRE>
 
-<A NAME="toc16"></A>
+<A NAME="cxx_io"></A>
 <H2>2.7. Entrada e saída</H2>
 
 <P>

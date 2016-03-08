@@ -345,11 +345,10 @@ int main(void)
 ```
 
 == Tratamento de erros ==
-% TODO ver excessão
-O tratamento de erros em C++ pode ser feito com excessões.
+O tratamento de erros em C++ pode ser feito com exceções.
 Alguns códigos mostram uma palavra-chave ``throw`` usada em C++ para criar uma
-excessão ou erro em tempo de execução.
-Uma  excessão padrão é a ``std::runtime_error``.
+exceção ou erro em tempo de execução.
+Uma  exceção padrão é a ``std::runtime_error``.
 
 Um exemplo é um programa que só aceita números positivos:
 ```
@@ -366,9 +365,9 @@ int main(void)
     return 0;
 }
 ```
-Tratar excessões depende da estrutura ``try/catch``, onde
+Tratar exceções depende da estrutura ``try/catch``, onde
 o bloco ``try``  é o código protegido e ``catch`` é executado
-somente quando ocorrer uma excessão.
+somente quando ocorrer uma exceção.
 ```
 #include <iostream>
 
@@ -377,7 +376,7 @@ int main(void)
     try {
         throw std::runtime_error{"um erro qualquer"};   // cria erro
     } catch(std::exception& e) {
-        std::cout << "ERRO: " << e.what() << std::endl; // trata excessão
+        std::cout << "ERRO: " << e.what() << std::endl; // trata exceção
         throw;                                          // recria
     }
     return 0;

@@ -1,0 +1,50 @@
+ELC106 - Algoritmo e Programação 
+Turmas Engenharia de Produção e Matemática, primeiro semestre de 2016
+Última atualização: %%date(%c)	
+
+%! Target: html
+%! Encoding: UTF-8
+%! Options: --toc --enum-title
+
+**Professor:**: João V. F. Lima (jvlima em inf.ufsm.br)
+
+**Sala:**: 374, Anexo B do CT (na dúvida, pergunte na sala 378).
+
+**Horário:** terças e quintas, 14h30
+
+**Programa da disciplina:** 
+
+**Notas:** 
+
+
+= Aulas = 
++ TODO
+
+
+= Exercícios = 
+
+= Trabalhos = 
++ Nada ainda.
+
+
+
+= Software =
+Utilizaremos **Python** (https://www.python.org/) no curso. Para instalar no Windows:
+- **Primeiro** - instalar o [Python 2.7.11 https://www.python.org/ftp/python/2.7.11/python-2.7.11.msi].
+- **Segundo** - instalar o editor [PyCharm https://download.jetbrains.com/python/pycharm-community-5.0.4.exe].
+- Se tiver dúvidas assista ao vídeo de como instalar o PyCharm https://youtu.be/JWsURGKXgiw
+
+
+= Material de apoio =
+
+- [Apostila de lógica https://drive.google.com/file/d/0B9YbxBHKIEpEUDFHZ3BabWI3MkE/view?usp=sharing].
+- [Guia para elaborar algoritmos https://drive.google.com/file/d/0B9YbxBHKIEpEcHc2NDlvVFAza0E/view?usp=sharing]  (cortesia da [profa Andrea http://www.inf.ufrgs.br/~andrea]).
+- Apostila de Python [Aprenda a Programar https://drive.google.com/file/d/0B9YbxBHKIEpEd2EtQ1VDeUhZbnM/view?usp=sharing].
+- Apostila mais avançada sobre Python [Tutorial Python https://drive.google.com/file/d/0B9YbxBHKIEpEczR4bnhsNDlvWlk/view?usp=sharing].
+
+
+
+
+
+--------------------------------------------------------
+Site feito com txt2tags (http://txt2tags.org/).

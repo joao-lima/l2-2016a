@@ -8,7 +8,7 @@
 <CENTER>
 <H1>ELC1067 - Laboratório de Programação II</H1>
 <FONT SIZE="4"><I>Turmas SI1 e SI2, primeiro semestre de 2016</I></FONT><BR>
-<FONT SIZE="4">Última atualização: Tue Mar  8 09:25:43 2016	</FONT>
+<FONT SIZE="4">Última atualização: Sun Mar 13 15:04:03 2016	</FONT>
 </CENTER>
 
 <P></P>
@@ -65,7 +65,7 @@
 <B>Horário:</B> terças e quintas, 10h30, sala 334
 </P>
 <P>
-<B>Programa da disciplina:</B> 
+<B>Cronograma:</B> <A HREF="https://docs.google.com/spreadsheets/d/11qaa090BV4FC3rOfS_Ct7ZODFO5EDFh9I6QIl-FpEI4/edit?usp=sharing">Planilha do Google</A>.
 </P>
 <P>
 <B>Notas:</B> 
@@ -504,10 +504,10 @@ do arquivo <CODE>alunos.txt</CODE>:
 <H2>2.8. Tratamento de erros</H2>
 
 <P>
-O tratamento de erros em C++ pode ser feito com excessões.
+O tratamento de erros em C++ pode ser feito com exceções.
 Alguns códigos mostram uma palavra-chave <CODE>throw</CODE> usada em C++ para criar uma
-excessão ou erro em tempo de execução.
-Uma  excessão padrão é a <CODE>std::runtime_error</CODE>.
+exceção ou erro em tempo de execução.
+Uma  exceção padrão é a <CODE>std::runtime_error</CODE>.
 </P>
 <P>
 Um exemplo é um programa que só aceita números positivos:
@@ -529,9 +529,9 @@ Um exemplo é um programa que só aceita números positivos:
 </PRE>
 
 <P>
-Tratar excessões depende da estrutura <CODE>try/catch</CODE>, onde
+Tratar exceções depende da estrutura <CODE>try/catch</CODE>, onde
 o bloco <CODE>try</CODE>  é o código protegido e <CODE>catch</CODE> é executado
-somente quando ocorrer uma excessão.
+somente quando ocorrer uma exceção.
 </P>
 
 <PRE>
@@ -542,7 +542,7 @@ somente quando ocorrer uma excessão.
       try {
           throw std::runtime_error{"um erro qualquer"};   // cria erro
       } catch(std::exception&amp; e) {
-          std::cout &lt;&lt; "ERRO: " &lt;&lt; e.what() &lt;&lt; std::endl; // trata excessão
+          std::cout &lt;&lt; "ERRO: " &lt;&lt; e.what() &lt;&lt; std::endl; // trata exceção
           throw;                                          // recria
       }
       return 0;

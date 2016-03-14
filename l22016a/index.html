@@ -8,7 +8,7 @@
 <CENTER>
 <H1>ELC1067 - Laboratório de Programação II</H1>
 <FONT SIZE="4"><I>Turmas SI1 e SI2, primeiro semestre de 2016</I></FONT><BR>
-<FONT SIZE="4">Última atualização: Sun Mar 13 15:04:03 2016	</FONT>
+<FONT SIZE="4">Última atualização: Sun Mar 13 22:38:35 2016	</FONT>
 </CENTER>
 
 <P></P>
@@ -20,39 +20,40 @@
     <UL>
     <LI><A HREF="#toc2">1.1. Primeiro trabalho</A>
     <LI><A HREF="#toc3">1.2. Segundo trabalho</A>
-    <LI><A HREF="#entrega">1.3. Entrega de trabalhos</A>
+    <LI><A HREF="#toc4">1.3. Terceiro trabalho</A>
+    <LI><A HREF="#entrega">1.4. Entrega de trabalhos</A>
     </UL>
-  <LI><A HREF="#toc5">Dicas C++</A>
+  <LI><A HREF="#toc6">Dicas C++</A>
     <UL>
-    <LI><A HREF="#toc6">2.1. Ola mundo</A>
-    <LI><A HREF="#toc7">2.2. Compilação</A>
+    <LI><A HREF="#toc7">2.1. Ola mundo</A>
+    <LI><A HREF="#toc8">2.2. Compilação</A>
     <LI><A HREF="#cxx_argv">2.3. Linha de comando</A>
-    <LI><A HREF="#toc9">2.4. Variáveis</A>
+    <LI><A HREF="#toc10">2.4. Variáveis</A>
       <UL>
-      <LI><A HREF="#toc10">2.4.1. auto</A>
-      <LI><A HREF="#toc11">2.4.2. Inicialização padrão</A>
-      <LI><A HREF="#toc12">2.4.3. Casting (conversão)</A>
+      <LI><A HREF="#toc11">2.4.1. auto</A>
+      <LI><A HREF="#toc12">2.4.2. Inicialização padrão</A>
+      <LI><A HREF="#toc13">2.4.3. Casting (conversão)</A>
       </UL>
-    <LI><A HREF="#toc13">2.5. Passagem de parâmetros</A>
+    <LI><A HREF="#toc14">2.5. Passagem de parâmetros</A>
       <UL>
-      <LI><A HREF="#toc14">2.5.1. Referência</A>
+      <LI><A HREF="#toc15">2.5.1. Referência</A>
       </UL>
     <LI><A HREF="#cxx_struct">2.6. Estrutura de dados</A>
     <LI><A HREF="#cxx_io">2.7. Entrada e saída</A>
-    <LI><A HREF="#toc17">2.8. Tratamento de erros</A>
-    <LI><A HREF="#toc18">2.9. Alocação de memória</A>
+    <LI><A HREF="#toc18">2.8. Tratamento de erros</A>
+    <LI><A HREF="#toc19">2.9. Alocação de memória</A>
       <UL>
-      <LI><A HREF="#toc19">2.9.1. New e delete</A>
-      <LI><A HREF="#toc20">2.9.2. Smart pointers</A>
-      <LI><A HREF="#toc21">2.9.3. Mover ao invés de copiar</A>
+      <LI><A HREF="#toc20">2.9.1. New e delete</A>
+      <LI><A HREF="#toc21">2.9.2. Smart pointers</A>
+      <LI><A HREF="#toc22">2.9.3. Mover ao invés de copiar</A>
       </UL>
-    <LI><A HREF="#toc22">2.10. Números aleatórios</A>
-    <LI><A HREF="#toc23">2.11. Tempo</A>
-    <LI><A HREF="#toc24">2.12. Namespaces</A>
-    <LI><A HREF="#toc25">2.13. Funções lambda</A>
-    <LI><A HREF="#toc26">2.14. Links úteis</A>
+    <LI><A HREF="#toc23">2.10. Números aleatórios</A>
+    <LI><A HREF="#toc24">2.11. Tempo</A>
+    <LI><A HREF="#toc25">2.12. Namespaces</A>
+    <LI><A HREF="#toc26">2.13. Funções lambda</A>
+    <LI><A HREF="#toc27">2.14. Links úteis</A>
     </UL>
-  <LI><A HREF="#toc27">Depuração</A>
+  <LI><A HREF="#toc28">Depuração</A>
   </OL>
 
 <P></P>
@@ -62,7 +63,7 @@
 <B>Professor:</B>: João V. F. Lima
 </P>
 <P>
-<B>Horário:</B> terças e quintas, 10h30, sala 334
+<B>Horário:</B> terças e quintas, 10h30, sala 334.
 </P>
 <P>
 <B>Cronograma:</B> <A HREF="https://docs.google.com/spreadsheets/d/11qaa090BV4FC3rOfS_Ct7ZODFO5EDFh9I6QIl-FpEI4/edit?usp=sharing">Planilha do Google</A>.
@@ -144,8 +145,55 @@ Nas dicas abaixo, procure sobre <A HREF="#cxx_argv">linha de comando</A>,
 <A NAME="toc3"></A>
 <H2>1.2. Segundo trabalho</H2>
 
+<P>
+Este trabalho consiste na implementação do jogo <B>Campo Minado</B> (<I>Minesweeper</I>).
+Os quadrados devem ser implementados com uma estrutura <B>matriz</B>, e
+as minas do jogo devem ser distribuídas aleatóriamente.
+</P>
+<P>
+O que deve ser lido como entrada:
+</P>
+
+<OL>
+<LI>Tamanho do campo.
+<LI>Número de minas no campo (sempre menor que o campo).
+</OL>
+
+<P>
+Comandos do jogo:
+</P>
+
+<OL>
+<LI>Revelar um quadrado.
+<LI>Marcar quadrado com mina (bandeira).
+<LI>Iniciar um novo jogo.
+<LI>Terminar o jogo.
+</OL>
+
+<P>
+<B>Regras:</B>
+</P>
+
+<UL>
+<LI>Não pode <CODE>std::vector</CODE> ou semelhantes.
+<LI>Usar matriz invés de vetor.
+</UL>
+
+<P>
+<B>ENTREGA: 23/03/2016</B>
+</P>
+
+<UL>
+<LI><B>Email: jvlima+elc1067 em inf.ufsm.br</B>
+<LI>Assunto: elc1067 T2
+<LI>Formato: tgz ou zip dos fontes, ver como <A HREF="#entrega">criar arquivo de entrega</A>.
+</UL>
+
+<A NAME="toc4"></A>
+<H2>1.3. Terceiro trabalho</H2>
+
 <A NAME="entrega"></A>
-<H2>1.3. Entrega de trabalhos</H2>
+<H2>1.4. Entrega de trabalhos</H2>
 
 <P>
 Crie um diretório para os fontes, por exemplo <CODE>t1-LOGIN</CODE> sendo 
@@ -157,7 +205,7 @@ Para compactar o diretório use o comando:
   $ tar -cvzf t1-LOGIN.tgz t1-LOGIN/
 </PRE>
 
-<A NAME="toc5"></A>
+<A NAME="toc6"></A>
 <H1>2. Dicas C++</H1>
 
 <P>
@@ -167,7 +215,7 @@ Nesse semestre, vamos utilizar a linguagem C++ na disciplina.
 <B>IMPORTANTE: A parte de orientação a objetos será ignorada.</B>
 </P>
 
-<A NAME="toc6"></A>
+<A NAME="toc7"></A>
 <H2>2.1. Ola mundo</H2>
 
 <PRE>
@@ -192,7 +240,7 @@ O que notamos nesse exemplo:
 <LI><CODE>std::endl</CODE> é uma nova linha (<CODE>\n</CODE>)
 </UL>
 
-<A NAME="toc7"></A>
+<A NAME="toc8"></A>
 <H2>2.2. Compilação</H2>
 
 <P>
@@ -234,14 +282,14 @@ O exemplo abaixo imprime todos os parâmetros passados:
   }
 </PRE>
 
-<A NAME="toc9"></A>
+<A NAME="toc10"></A>
 <H2>2.4. Variáveis</H2>
 
 <P>
 Declarações em C++ são semelhantes em C, com algumas melhorias.
 </P>
 
-<A NAME="toc10"></A>
+<A NAME="toc11"></A>
 <H3>2.4.1. auto</H3>
 
 <P>
@@ -258,7 +306,7 @@ Pode-se usar <B>auto</B> quando o tipo é deduzido pelo compilador como em:
   	std::cout &lt;&lt; "Valor: " &lt;&lt; i &lt;&lt; std::endl;
 </PRE>
 
-<A NAME="toc11"></A>
+<A NAME="toc12"></A>
 <H3>2.4.2. Inicialização padrão</H3>
 
 <P>
@@ -277,7 +325,7 @@ Por exemplo:
 <B>ATENÇÃO:</B> não funciona com <B>auto</B>.
 </P>
 
-<A NAME="toc12"></A>
+<A NAME="toc13"></A>
 <H3>2.4.3. Casting (conversão)</H3>
 
 <P>
@@ -305,10 +353,10 @@ Alguns exemplos:
   int* vetor = reinterpret_cast&lt;int*&gt;(dados); // mudei agora para int
 </PRE>
 
-<A NAME="toc13"></A>
+<A NAME="toc14"></A>
 <H2>2.5. Passagem de parâmetros</H2>
 
-<A NAME="toc14"></A>
+<A NAME="toc15"></A>
 <H3>2.5.1. Referência</H3>
 
 <P>
@@ -500,7 +548,7 @@ do arquivo <CODE>alunos.txt</CODE>:
   }
 </PRE>
 
-<A NAME="toc17"></A>
+<A NAME="toc18"></A>
 <H2>2.8. Tratamento de erros</H2>
 
 <P>
@@ -549,10 +597,10 @@ somente quando ocorrer uma exceção.
   }
 </PRE>
 
-<A NAME="toc18"></A>
+<A NAME="toc19"></A>
 <H2>2.9. Alocação de memória</H2>
 
-<A NAME="toc19"></A>
+<A NAME="toc20"></A>
 <H3>2.9.1. New e delete</H3>
 
 <P>
@@ -575,7 +623,7 @@ liberar memória, respectivamente.
   delete[] vetor;
 </PRE>
 
-<A NAME="toc20"></A>
+<A NAME="toc21"></A>
 <H3>2.9.2. Smart pointers</H3>
 
 <P>
@@ -646,7 +694,7 @@ C++11 proporciona o <B>operador move</B> que move o conteúdo ao invés de copia
   std::cout &lt;&lt; "Copia: " &lt;&lt; copia.get() &lt;&lt; std::endl; // saída: endereço do ponteiro alocado
 </PRE>
 
-<A NAME="toc21"></A>
+<A NAME="toc22"></A>
 <H3>2.9.3. Mover ao invés de copiar</H3>
 
 <P>
@@ -662,7 +710,7 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   std::cout &lt;&lt; "Copia: " &lt;&lt; copia &lt;&lt; std::endl;   // saida: "Texto"
 </PRE>
 
-<A NAME="toc22"></A>
+<A NAME="toc23"></A>
 <H2>2.10. Números aleatórios</H2>
 
 <PRE>
@@ -681,7 +729,7 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   }
 </PRE>
 
-<A NAME="toc23"></A>
+<A NAME="toc24"></A>
 <H2>2.11. Tempo</H2>
 
 <PRE>
@@ -706,7 +754,7 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   }
 </PRE>
 
-<A NAME="toc24"></A>
+<A NAME="toc25"></A>
 <H2>2.12. Namespaces</H2>
 
 <P>
@@ -728,10 +776,10 @@ No exemplo abaixo, definimos um namespace com uma função e uso:
   Uteis::foo();
 </PRE>
 
-<A NAME="toc25"></A>
+<A NAME="toc26"></A>
 <H2>2.13. Funções lambda</H2>
 
-<A NAME="toc26"></A>
+<A NAME="toc27"></A>
 <H2>2.14. Links úteis</H2>
 
 <UL>
@@ -742,7 +790,7 @@ No exemplo abaixo, definimos um namespace com uma função e uso:
 <LI>Sobre C++11 <A HREF="http://herbsutter.com/elements-of-modern-c-style/">http://herbsutter.com/elements-of-modern-c-style/</A>
 </UL>
 
-<A NAME="toc27"></A>
+<A NAME="toc28"></A>
 <H1>3. Depuração</H1>
 
 <HR NOSHADE SIZE=1>

@@ -61,7 +61,34 @@ Nas dicas abaixo, procure sobre [linha de comando #cxx_argv],
 
 
 == Segundo trabalho ==
+Este trabalho consiste na implementação do jogo **Campo Minado** (//Minesweeper//).
+Os quadrados devem ser implementados com uma estrutura **matriz**, e
+as minas do jogo devem ser distribuídas aleatóriamente.
 
+O que deve ser lido como entrada:
++ Tamanho do campo.
++ Número de minas no campo (sempre menor que o campo).
+
+
+Comandos do jogo:
++ Revelar um quadrado.
++ Marcar quadrado com mina (bandeira).
++ Iniciar um novo jogo.
++ Terminar o jogo.
+
+
+**Regras:**
+- Não pode ``std::vector`` ou semelhantes.
+- Usar matriz invés de vetor.
+
+
+**ENTREGA: 23/03/2016**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T2
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
+== Terceiro trabalho ==
 
 
 == Entrega de trabalhos ==[entrega]

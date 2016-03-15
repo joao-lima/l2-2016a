@@ -79,7 +79,7 @@ Comandos do jogo:
 
 **Regras:**
 - Não pode ``std::vector`` ou semelhantes.
-- Usar matriz invés de vetor.
+- Usar matriz invés de vetor (ver sobre [matrizes #cxx_matriz]).
 
 
 **ENTREGA: 23/03/2016**
@@ -433,7 +433,7 @@ delete[] vetor;
 ```
 
 
-=== Matrizes ===
+=== Matrizes ===[cxx_matriz]
 Pode-se criar matrizes como em C, porém com ``new`` e ``delete``.
 Basta um vetor de ponteiros (``int**``) com cada posição um vetor (``int*``).
 

@@ -433,6 +433,31 @@ delete[] vetor;
 ```
 
 
+=== Matrizes ===
+Pode-se criar matrizes como em C, porém com ``new`` e ``delete``.
+Basta um vetor de ponteiros (``int**``) com cada posição um vetor (``int*``).
+
+No exemplo abaixo, qualquer outro tipo pode ser usando trocando ``int`` por 
+outro tipo.
+```
+int** matriz {nullptr};
+int N = 10;
+matriz = new int*[N];        // vetor com ponteiros
+for(auto i = 0; i < N; i++)
+    matriz[i] = new int[N];  // linha da matriz
+
+// inicia valores
+for(auto i = 0; i < N; i++)
+    for(auto j = 0; j < N; j++)
+        matriz[i][j] = 0;
+
+// destroi matriz: cada linha e depois matriz
+for(auto i = 0; i < N; i++)
+    delete[] matriz[i];
+delete[] matriz;
+```
+
+
 === Smart pointers ===
 O suporte a //smart pointers// auxilia no gerênciamento de memória. 
 Ele elimina a necessidade de liberar memória (//delete//), sendo liberada automaticamente

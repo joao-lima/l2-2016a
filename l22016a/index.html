@@ -8,7 +8,7 @@
 <CENTER>
 <H1>ELC1067 - Laboratório de Programação II</H1>
 <FONT SIZE="4"><I>Turmas SI1 e SI2, primeiro semestre de 2016</I></FONT><BR>
-<FONT SIZE="4">Última atualização: Sun Mar 13 22:38:35 2016	</FONT>
+<FONT SIZE="4">Última atualização: Mon Mar 14 23:08:52 2016	</FONT>
 </CENTER>
 
 <P></P>
@@ -44,16 +44,17 @@
     <LI><A HREF="#toc19">2.9. Alocação de memória</A>
       <UL>
       <LI><A HREF="#toc20">2.9.1. New e delete</A>
-      <LI><A HREF="#toc21">2.9.2. Smart pointers</A>
-      <LI><A HREF="#toc22">2.9.3. Mover ao invés de copiar</A>
+      <LI><A HREF="#toc21">2.9.2. Matrizes</A>
+      <LI><A HREF="#toc22">2.9.3. Smart pointers</A>
+      <LI><A HREF="#toc23">2.9.4. Mover ao invés de copiar</A>
       </UL>
-    <LI><A HREF="#toc23">2.10. Números aleatórios</A>
-    <LI><A HREF="#toc24">2.11. Tempo</A>
-    <LI><A HREF="#toc25">2.12. Namespaces</A>
-    <LI><A HREF="#toc26">2.13. Funções lambda</A>
-    <LI><A HREF="#toc27">2.14. Links úteis</A>
+    <LI><A HREF="#toc24">2.10. Números aleatórios</A>
+    <LI><A HREF="#toc25">2.11. Tempo</A>
+    <LI><A HREF="#toc26">2.12. Namespaces</A>
+    <LI><A HREF="#toc27">2.13. Funções lambda</A>
+    <LI><A HREF="#toc28">2.14. Links úteis</A>
     </UL>
-  <LI><A HREF="#toc28">Depuração</A>
+  <LI><A HREF="#toc29">Depuração</A>
   </OL>
 
 <P></P>
@@ -624,7 +625,37 @@ liberar memória, respectivamente.
 </PRE>
 
 <A NAME="toc21"></A>
-<H3>2.9.2. Smart pointers</H3>
+<H3>2.9.2. Matrizes</H3>
+
+<P>
+Pode-se criar matrizes como em C, porém com <CODE>new</CODE> e <CODE>delete</CODE>.
+Basta um vetor de ponteiros (<CODE>int**</CODE>) com cada posição um vetor (<CODE>int*</CODE>).
+</P>
+<P>
+No exemplo abaixo, qualquer outro tipo pode ser usando trocando <CODE>int</CODE> por 
+outro tipo.
+</P>
+
+<PRE>
+  int** matriz {nullptr};
+  int N = 10;
+  matriz = new int*[N];        // vetor com ponteiros
+  for(auto i = 0; i &lt; N; i++)
+      matriz[i] = new int[N];  // linha da matriz
+  
+  // inicia valores
+  for(auto i = 0; i &lt; N; i++)
+      for(auto j = 0; j &lt; N; j++)
+          matriz[i][j] = 0;
+  
+  // destroi matriz: cada linha e depois matriz
+  for(auto i = 0; i &lt; N; i++)
+      delete[] matriz[i];
+  delete[] matriz;
+</PRE>
+
+<A NAME="toc22"></A>
+<H3>2.9.3. Smart pointers</H3>
 
 <P>
 O suporte a <I>smart pointers</I> auxilia no gerênciamento de memória. 
@@ -694,8 +725,8 @@ C++11 proporciona o <B>operador move</B> que move o conteúdo ao invés de copia
   std::cout &lt;&lt; "Copia: " &lt;&lt; copia.get() &lt;&lt; std::endl; // saída: endereço do ponteiro alocado
 </PRE>
 
-<A NAME="toc22"></A>
-<H3>2.9.3. Mover ao invés de copiar</H3>
+<A NAME="toc23"></A>
+<H3>2.9.4. Mover ao invés de copiar</H3>
 
 <P>
 Como dito anteriormente, C++11 proporciona o <B>operador move</B> que move o
@@ -710,7 +741,7 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   std::cout &lt;&lt; "Copia: " &lt;&lt; copia &lt;&lt; std::endl;   // saida: "Texto"
 </PRE>
 
-<A NAME="toc23"></A>
+<A NAME="toc24"></A>
 <H2>2.10. Números aleatórios</H2>
 
 <PRE>
@@ -729,7 +760,7 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   }
 </PRE>
 
-<A NAME="toc24"></A>
+<A NAME="toc25"></A>
 <H2>2.11. Tempo</H2>
 
 <PRE>
@@ -754,7 +785,7 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   }
 </PRE>
 
-<A NAME="toc25"></A>
+<A NAME="toc26"></A>
 <H2>2.12. Namespaces</H2>
 
 <P>
@@ -776,10 +807,10 @@ No exemplo abaixo, definimos um namespace com uma função e uso:
   Uteis::foo();
 </PRE>
 
-<A NAME="toc26"></A>
+<A NAME="toc27"></A>
 <H2>2.13. Funções lambda</H2>
 
-<A NAME="toc27"></A>
+<A NAME="toc28"></A>
 <H2>2.14. Links úteis</H2>
 
 <UL>
@@ -790,7 +821,7 @@ No exemplo abaixo, definimos um namespace com uma função e uso:
 <LI>Sobre C++11 <A HREF="http://herbsutter.com/elements-of-modern-c-style/">http://herbsutter.com/elements-of-modern-c-style/</A>
 </UL>
 
-<A NAME="toc28"></A>
+<A NAME="toc29"></A>
 <H1>3. Depuração</H1>
 
 <HR NOSHADE SIZE=1>

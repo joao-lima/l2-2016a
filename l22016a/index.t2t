@@ -536,6 +536,7 @@ std::cout << "Copia: " << copia << std::endl;   // saida: "Texto"
 ```
 #include <iostream>
 #include <random>
+#include <functional>
 
 int main(void)
 {

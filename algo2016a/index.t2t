@@ -28,9 +28,11 @@ quinta-feira. Se não entregar, recebe falta.
 
 = Aulas = 
 + [Introdução a algoritmos aulas/aula1-intro.pdf].
-+ [Introdução a Python aulas/aula2.pdf]
++ [Introdução a Python aulas/aula2.pdf].
   - Exercício da aula: lightbot https://lightbot.com/hocflash.html
   - [Atividade do moodle aulas/exercicios-aula2.pdf].
++ [Operadores relacionais e lógicos aulas/aula3.pdf].
+  - [Atividade do moodle aulas/exercicios-aula3.pdf].
 + Esrutura de decisão.
 + Estruturas de repetição.
 + Funções.

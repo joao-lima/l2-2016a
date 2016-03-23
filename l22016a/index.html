@@ -8,7 +8,7 @@
 <CENTER>
 <H1>ELC1067 - Laboratório de Programação II</H1>
 <FONT SIZE="4"><I>Turmas SI1 e SI2, primeiro semestre de 2016</I></FONT><BR>
-<FONT SIZE="4">Última atualização: Tue Mar 15 11:59:57 2016	</FONT>
+<FONT SIZE="4">Última atualização: Tue Mar 22 22:25:17 2016	</FONT>
 </CENTER>
 
 <P></P>
@@ -748,12 +748,17 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   #include &lt;iostream&gt;
   #include &lt;random&gt;
   #include &lt;functional&gt;
+  #include &lt;chrono&gt;
   
   int main(void)
   {
+      // a semente é o tempo desde 1/1/1970
+      auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+      // gerador de números
+      std::default_random_engine generator(seed);
+      
       // numeros aleatórios de 0 até 100
-      auto rand = std::bind(std::uniform_int_distribution&lt;int&gt;{0,100},
-          std::default_random_engine{});   
+      auto rand = std::bind(std::uniform_int_distribution&lt;int&gt;{0,100}, generator);
       for(auto i= 0; i &lt; 10; i++){
           std::cout &lt;&lt; rand() &lt;&lt; std::endl;
       }

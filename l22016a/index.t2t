@@ -537,12 +537,17 @@ std::cout << "Copia: " << copia << std::endl;   // saida: "Texto"
 #include <iostream>
 #include <random>
 #include <functional>
+#include <chrono>
 
 int main(void)
 {
+    // a semente é o tempo desde 1/1/1970
+    auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    // gerador de números
+    std::default_random_engine generator(seed);
+    
     // numeros aleatórios de 0 até 100
-    auto rand = std::bind(std::uniform_int_distribution<int>{0,100},
-        std::default_random_engine{});   
+    auto rand = std::bind(std::uniform_int_distribution<int>{0,100}, generator);
     for(auto i= 0; i < 10; i++){
         std::cout << rand() << std::endl;
     }

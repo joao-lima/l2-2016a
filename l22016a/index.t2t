@@ -557,7 +557,7 @@ Será uma das formas usadas aqui para construir TADs (//tipos abstratos de dados
 Considere uma função que retorna o elemento maior entre ``x`` e ``y``, podemos descrever com templates:
 ```
 template<typename T>
-void max(T& x, T& y)
+void max(T x, T y)
 {
     return (x > y) ? x : y;
 }

@@ -89,6 +89,23 @@ Comandos do jogo:
 
 
 == Terceiro trabalho ==
+Este trabalho consiste na implementação da TAD ``Vetor``.
+Essa estrutura faz uso de uma [template C++ #cxx_template]
+sendo que o tipo armazenado não é definido até a compilação do programa.
+
+Complete as funções dentro do arquivo ``vetor.hpp`` (//arquivo header C++//)
+a fim de que todos os testes do programa (``principal.cpp``) funcionem.
+**Não altere o arquivo principal.cpp**.
+
+Arquivos do trabalho: [principal.cpp arquivos/t3/principal.cpp], [vetor.hpp arquivos/t3/vetor.hpp].
+
+**ENTREGA: 30/3/2016 (4a feira)**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T3
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
+== Quarto trabalho ==
 
 
 == Entrega de trabalhos ==[entrega]
@@ -529,6 +546,47 @@ std::cout << "String 1: " << str1 << std::endl; // saida vazia
 std::cout << "Copia: " << copia << std::endl;   // saida: "Texto"
 ```
 
+
+== Templates ==[cxx_template]
+As templates C++ possibilitam programação genérica usando 
+tipos como parâmetros.
+Elas basicamente descrevem como construir um conjunto de
+funções ou estruturas que comportam-se da mesma forma.
+Será uma das formas usadas aqui para construir TADs (//tipos abstratos de dados//).
+
+Considere uma função que retorna o elemento maior entre ``x`` e ``y``, podemos descrever com templates:
+```
+template<typename T>
+void max(T& x, T& y)
+{
+    return (x > y) ? x : y;
+}
+
+// usando a função
+valor = max<int>( 2, 3 );
+```
+``template<typename T>`` denota que uma template é declarada e que o argumento de tipo ``T``
+será usado. 
+O tipo ``T`` é valido dentro do bloco da função, ou estrutura.
+Então, toda vez que nos referimos a ``T``, ele é substituido pelo tipo usado.
+
+No caso de uma estrutura com template:
+```
+template<typename T>
+struct Ponto {
+    T x;
+    T y;
+};
+
+// criando um ponto
+Ponto<float> p1;  // ponto com float
+Ponto<int>   p2; // ponto com int
+```
+descreve uma estrutura ``Ponto`` que tem x e y com tipo definido pelo usuário.
+Note que declaramos duas variáveis com tipos diferentes: ``int`` e ``float``.
+O compilador irá gerar a estrutura com ambos os tipos usados como parâmetro.
+
+Dicas sobre templates: https://isocpp.org/wiki/faq/templates
 
 == Números aleatórios ==
 

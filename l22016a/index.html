@@ -8,7 +8,7 @@
 <CENTER>
 <H1>ELC1067 - Laboratório de Programação II</H1>
 <FONT SIZE="4"><I>Turmas SI1 e SI2, primeiro semestre de 2016</I></FONT><BR>
-<FONT SIZE="4">Última atualização: Tue Mar 22 22:25:17 2016	</FONT>
+<FONT SIZE="4">Última atualização: Wed Mar 23 22:24:16 2016	</FONT>
 </CENTER>
 
 <P></P>
@@ -21,40 +21,42 @@
     <LI><A HREF="#toc2">1.1. Primeiro trabalho</A>
     <LI><A HREF="#toc3">1.2. Segundo trabalho</A>
     <LI><A HREF="#toc4">1.3. Terceiro trabalho</A>
-    <LI><A HREF="#entrega">1.4. Entrega de trabalhos</A>
+    <LI><A HREF="#toc5">1.4. Quarto trabalho</A>
+    <LI><A HREF="#entrega">1.5. Entrega de trabalhos</A>
     </UL>
-  <LI><A HREF="#toc6">Dicas C++</A>
+  <LI><A HREF="#toc7">Dicas C++</A>
     <UL>
-    <LI><A HREF="#toc7">2.1. Ola mundo</A>
-    <LI><A HREF="#toc8">2.2. Compilação</A>
+    <LI><A HREF="#toc8">2.1. Ola mundo</A>
+    <LI><A HREF="#toc9">2.2. Compilação</A>
     <LI><A HREF="#cxx_argv">2.3. Linha de comando</A>
-    <LI><A HREF="#toc10">2.4. Variáveis</A>
+    <LI><A HREF="#toc11">2.4. Variáveis</A>
       <UL>
-      <LI><A HREF="#toc11">2.4.1. auto</A>
-      <LI><A HREF="#toc12">2.4.2. Inicialização padrão</A>
-      <LI><A HREF="#toc13">2.4.3. Casting (conversão)</A>
+      <LI><A HREF="#toc12">2.4.1. auto</A>
+      <LI><A HREF="#toc13">2.4.2. Inicialização padrão</A>
+      <LI><A HREF="#toc14">2.4.3. Casting (conversão)</A>
       </UL>
-    <LI><A HREF="#toc14">2.5. Passagem de parâmetros</A>
+    <LI><A HREF="#toc15">2.5. Passagem de parâmetros</A>
       <UL>
-      <LI><A HREF="#toc15">2.5.1. Referência</A>
+      <LI><A HREF="#toc16">2.5.1. Referência</A>
       </UL>
     <LI><A HREF="#cxx_struct">2.6. Estrutura de dados</A>
     <LI><A HREF="#cxx_io">2.7. Entrada e saída</A>
-    <LI><A HREF="#toc18">2.8. Tratamento de erros</A>
-    <LI><A HREF="#toc19">2.9. Alocação de memória</A>
+    <LI><A HREF="#toc19">2.8. Tratamento de erros</A>
+    <LI><A HREF="#toc20">2.9. Alocação de memória</A>
       <UL>
-      <LI><A HREF="#toc20">2.9.1. New e delete</A>
+      <LI><A HREF="#toc21">2.9.1. New e delete</A>
       <LI><A HREF="#cxx_matriz">2.9.2. Matrizes</A>
-      <LI><A HREF="#toc22">2.9.3. Smart pointers</A>
-      <LI><A HREF="#toc23">2.9.4. Mover ao invés de copiar</A>
+      <LI><A HREF="#toc23">2.9.3. Smart pointers</A>
+      <LI><A HREF="#toc24">2.9.4. Mover ao invés de copiar</A>
       </UL>
-    <LI><A HREF="#toc24">2.10. Números aleatórios</A>
-    <LI><A HREF="#toc25">2.11. Tempo</A>
-    <LI><A HREF="#toc26">2.12. Namespaces</A>
-    <LI><A HREF="#toc27">2.13. Funções lambda</A>
-    <LI><A HREF="#toc28">2.14. Links úteis</A>
+    <LI><A HREF="#cxx_template">2.10. Templates</A>
+    <LI><A HREF="#toc26">2.11. Números aleatórios</A>
+    <LI><A HREF="#toc27">2.12. Tempo</A>
+    <LI><A HREF="#toc28">2.13. Namespaces</A>
+    <LI><A HREF="#toc29">2.14. Funções lambda</A>
+    <LI><A HREF="#toc30">2.15. Links úteis</A>
     </UL>
-  <LI><A HREF="#toc29">Depuração</A>
+  <LI><A HREF="#toc31">Depuração</A>
   </OL>
 
 <P></P>
@@ -193,8 +195,34 @@ Comandos do jogo:
 <A NAME="toc4"></A>
 <H2>1.3. Terceiro trabalho</H2>
 
+<P>
+Este trabalho consiste na implementação da TAD <CODE>Vetor</CODE>.
+Essa estrutura faz uso de uma <A HREF="#cxx_template">template C++</A>
+sendo que o tipo armazenado não é definido até a compilação do programa.
+</P>
+<P>
+Complete as funções dentro do arquivo <CODE>vetor.hpp</CODE> (<I>arquivo header C++</I>)
+a fim de que todos os testes do programa (<CODE>principal.cpp</CODE>) funcionem.
+<B>Não altere o arquivo principal.cpp</B>.
+</P>
+<P>
+Arquivos do trabalho: <A HREF="arquivos/t3/principal.cpp">principal.cpp</A>, <A HREF="arquivos/t3/vetor.hpp">vetor.hpp</A>.
+</P>
+<P>
+<B>ENTREGA: 30/3/2016 (4a feira)</B>
+</P>
+
+<UL>
+<LI><B>Email: jvlima+elc1067 em inf.ufsm.br</B>
+<LI>Assunto: elc1067 T3
+<LI>Formato: tgz ou zip dos fontes, ver como <A HREF="#entrega">criar arquivo de entrega</A>.
+</UL>
+
+<A NAME="toc5"></A>
+<H2>1.4. Quarto trabalho</H2>
+
 <A NAME="entrega"></A>
-<H2>1.4. Entrega de trabalhos</H2>
+<H2>1.5. Entrega de trabalhos</H2>
 
 <P>
 Crie um diretório para os fontes, por exemplo <CODE>t1-LOGIN</CODE> sendo 
@@ -206,7 +234,7 @@ Para compactar o diretório use o comando:
   $ tar -cvzf t1-LOGIN.tgz t1-LOGIN/
 </PRE>
 
-<A NAME="toc6"></A>
+<A NAME="toc7"></A>
 <H1>2. Dicas C++</H1>
 
 <P>
@@ -216,7 +244,7 @@ Nesse semestre, vamos utilizar a linguagem C++ na disciplina.
 <B>IMPORTANTE: A parte de orientação a objetos será ignorada.</B>
 </P>
 
-<A NAME="toc7"></A>
+<A NAME="toc8"></A>
 <H2>2.1. Ola mundo</H2>
 
 <PRE>
@@ -241,7 +269,7 @@ O que notamos nesse exemplo:
 <LI><CODE>std::endl</CODE> é uma nova linha (<CODE>\n</CODE>)
 </UL>
 
-<A NAME="toc8"></A>
+<A NAME="toc9"></A>
 <H2>2.2. Compilação</H2>
 
 <P>
@@ -283,14 +311,14 @@ O exemplo abaixo imprime todos os parâmetros passados:
   }
 </PRE>
 
-<A NAME="toc10"></A>
+<A NAME="toc11"></A>
 <H2>2.4. Variáveis</H2>
 
 <P>
 Declarações em C++ são semelhantes em C, com algumas melhorias.
 </P>
 
-<A NAME="toc11"></A>
+<A NAME="toc12"></A>
 <H3>2.4.1. auto</H3>
 
 <P>
@@ -307,7 +335,7 @@ Pode-se usar <B>auto</B> quando o tipo é deduzido pelo compilador como em:
   	std::cout &lt;&lt; "Valor: " &lt;&lt; i &lt;&lt; std::endl;
 </PRE>
 
-<A NAME="toc12"></A>
+<A NAME="toc13"></A>
 <H3>2.4.2. Inicialização padrão</H3>
 
 <P>
@@ -326,7 +354,7 @@ Por exemplo:
 <B>ATENÇÃO:</B> não funciona com <B>auto</B>.
 </P>
 
-<A NAME="toc13"></A>
+<A NAME="toc14"></A>
 <H3>2.4.3. Casting (conversão)</H3>
 
 <P>
@@ -354,10 +382,10 @@ Alguns exemplos:
   int* vetor = reinterpret_cast&lt;int*&gt;(dados); // mudei agora para int
 </PRE>
 
-<A NAME="toc14"></A>
+<A NAME="toc15"></A>
 <H2>2.5. Passagem de parâmetros</H2>
 
-<A NAME="toc15"></A>
+<A NAME="toc16"></A>
 <H3>2.5.1. Referência</H3>
 
 <P>
@@ -549,7 +577,7 @@ do arquivo <CODE>alunos.txt</CODE>:
   }
 </PRE>
 
-<A NAME="toc18"></A>
+<A NAME="toc19"></A>
 <H2>2.8. Tratamento de erros</H2>
 
 <P>
@@ -598,10 +626,10 @@ somente quando ocorrer uma exceção.
   }
 </PRE>
 
-<A NAME="toc19"></A>
+<A NAME="toc20"></A>
 <H2>2.9. Alocação de memória</H2>
 
-<A NAME="toc20"></A>
+<A NAME="toc21"></A>
 <H3>2.9.1. New e delete</H3>
 
 <P>
@@ -654,7 +682,7 @@ outro tipo.
   delete[] matriz;
 </PRE>
 
-<A NAME="toc22"></A>
+<A NAME="toc23"></A>
 <H3>2.9.3. Smart pointers</H3>
 
 <P>
@@ -725,7 +753,7 @@ C++11 proporciona o <B>operador move</B> que move o conteúdo ao invés de copia
   std::cout &lt;&lt; "Copia: " &lt;&lt; copia.get() &lt;&lt; std::endl; // saída: endereço do ponteiro alocado
 </PRE>
 
-<A NAME="toc23"></A>
+<A NAME="toc24"></A>
 <H3>2.9.4. Mover ao invés de copiar</H3>
 
 <P>
@@ -741,8 +769,64 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   std::cout &lt;&lt; "Copia: " &lt;&lt; copia &lt;&lt; std::endl;   // saida: "Texto"
 </PRE>
 
-<A NAME="toc24"></A>
-<H2>2.10. Números aleatórios</H2>
+<A NAME="cxx_template"></A>
+<H2>2.10. Templates</H2>
+
+<P>
+As templates C++ possibilitam programação genérica usando 
+tipos como parâmetros.
+Elas basicamente descrevem como construir um conjunto de
+funções ou estruturas que comportam-se da mesma forma.
+Será uma das formas usadas aqui para construir TADs (<I>tipos abstratos de dados</I>).
+</P>
+<P>
+Considere uma função que retorna o elemento maior entre <CODE>x</CODE> e <CODE>y</CODE>, podemos descrever com templates:
+</P>
+
+<PRE>
+  template&lt;typename T&gt;
+  void max(T&amp; x, T&amp; y)
+  {
+      return (x &gt; y) ? x : y;
+  }
+  
+  // usando a função
+  valor = max&lt;int&gt;( 2, 3 );
+</PRE>
+
+<P>
+<CODE>template&lt;typename T&gt;</CODE> denota que uma template é declarada e que o argumento de tipo <CODE>T</CODE>
+será usado. 
+O tipo <CODE>T</CODE> é valido dentro do bloco da função, ou estrutura.
+Então, toda vez que nos referimos a <CODE>T</CODE>, ele é substituido pelo tipo usado.
+</P>
+<P>
+No caso de uma estrutura com template:
+</P>
+
+<PRE>
+  template&lt;typename T&gt;
+  struct Ponto {
+      T x;
+      T y;
+  };
+  
+  // criando um ponto
+  Ponto&lt;float&gt; p1;  // ponto com float
+  Ponto&lt;int&gt;   p2; // ponto com int
+</PRE>
+
+<P>
+descreve uma estrutura <CODE>Ponto</CODE> que tem x e y com tipo definido pelo usuário.
+Note que declaramos duas variáveis com tipos diferentes: <CODE>int</CODE> e <CODE>float</CODE>.
+O compilador irá gerar a estrutura com ambos os tipos usados como parâmetro.
+</P>
+<P>
+Dicas sobre templates: <A HREF="https://isocpp.org/wiki/faq/templates">https://isocpp.org/wiki/faq/templates</A>
+</P>
+
+<A NAME="toc26"></A>
+<H2>2.11. Números aleatórios</H2>
 
 <PRE>
   #include &lt;iostream&gt;
@@ -766,8 +850,8 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   }
 </PRE>
 
-<A NAME="toc25"></A>
-<H2>2.11. Tempo</H2>
+<A NAME="toc27"></A>
+<H2>2.12. Tempo</H2>
 
 <PRE>
   #include &lt;iostream&gt;
@@ -791,8 +875,8 @@ Este exemplo mostra como funciona ao mover uma <I>string</I> usando <CODE>std::m
   }
 </PRE>
 
-<A NAME="toc26"></A>
-<H2>2.12. Namespaces</H2>
+<A NAME="toc28"></A>
+<H2>2.13. Namespaces</H2>
 
 <P>
 Namespaces em C++ criam <I>escopos nomeados</I>  e aumenta a modularidade do código.
@@ -813,11 +897,11 @@ No exemplo abaixo, definimos um namespace com uma função e uso:
   Uteis::foo();
 </PRE>
 
-<A NAME="toc27"></A>
-<H2>2.13. Funções lambda</H2>
+<A NAME="toc29"></A>
+<H2>2.14. Funções lambda</H2>
 
-<A NAME="toc28"></A>
-<H2>2.14. Links úteis</H2>
+<A NAME="toc30"></A>
+<H2>2.15. Links úteis</H2>
 
 <UL>
 <LI>Referência para C++/C  <A HREF="http://pt.cppreference.com">http://pt.cppreference.com</A>
@@ -827,7 +911,7 @@ No exemplo abaixo, definimos um namespace com uma função e uso:
 <LI>Sobre C++11 <A HREF="http://herbsutter.com/elements-of-modern-c-style/">http://herbsutter.com/elements-of-modern-c-style/</A>
 </UL>
 
-<A NAME="toc29"></A>
+<A NAME="toc31"></A>
 <H1>3. Depuração</H1>
 
 <HR NOSHADE SIZE=1>

@@ -106,6 +106,26 @@ Arquivos do trabalho: [principal.cpp arquivos/t3/principal.cpp], [vetor.hpp arqu
 
 
 == Quarto trabalho ==
+Este trabalho (T4) consiste na implementação do jogo **Space Invaders** usando a TAD ``Vetor``
+do T3.
+O objetivo é guardar os invasores do jogo dentro da TAD ``Vetor``, desde quando
+são criados no começo do jogo até remoção deles.
+
+Baixe os arquivos do trabalho e use como exemplo o arquivo ``principal.cpp``
+para entender as funções de tela.
+Altere esse arquivo e complete as funcionalidades do jogo.
+Note que os comandos do jogo (por enquanto) são: aperte **q** para sair,
+**a** para movimentar o laser para esquerda, **d** para movimentar para direita, e
+**f** para atirar.
+
+Arquivos do trabalho: [t4.tgz arquivos/t4.tgz].
+
+**ENTREGA: 18/4/2016 (2a feira)**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T4
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
 
 
 == Entrega de trabalhos ==[entrega]

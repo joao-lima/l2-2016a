@@ -127,6 +127,19 @@ Arquivos do trabalho: [t4.tgz arquivos/t4.tgz].
 
 
 
+== Quinto trabalho ==
+Este trabalho (T5) consiste em um complemento do T4 para o jogo **Space Invaders**: 
+implementação de tiros em sequência usando uma lista.
+O objetivo é guardar os tiros de laser dentro de uma ``std::list``do C++.
+Para entender seu uso, [ver abaixo sobre listas #stl].
+
+**ENTREGA: 25/4/2016 (2a feira)**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T5
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
+
 
 == Entrega de trabalhos ==[entrega]
 Crie um diretório para os fontes, por exemplo ``t1-LOGIN`` sendo 
@@ -676,6 +689,52 @@ Uteis::foo();
 ```
 
 == Funções lambda ==
+
+== Standard Template Library (STL) ==[stl]
+
+
+=== Lista === 
+A ``std::list`` é uma lista que suporta inserção e remoção de elementos de
+qualquer lugar em tempo constante.
+
+```
+#include <iostream>
+#include <list>
+#include <random>
+#include <functional>
+
+int main(void)
+{
+    // Ver: http://en.cppreference.com/w/cpp/container/list
+    std::list<int> lista;
+
+    auto seed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    std::default_random_engine generator(seed);
+    auto rand = std::bind(std::uniform_int_distribution<int>{0,100}, generator);
+    
+    // insere 20 elementos aleatórios
+    for(auto i= 0; i < 20; i++)
+        lista.push_back(rand());
+
+    auto primeiro = begin(lista); // iterador C++
+    auto ultimo = end(lista); // iterador C++
+    std::cout << "Primeiro elemento: " << *primeiro << std::endl;
+    std::cout << "Ultimo elemento: " << *ultimo << std::endl;
+
+    // laço do C++ para containers
+    for(auto& v: lista){
+        // cada 'v' é um int&: uma referência
+        std::cout << v << std::endl;
+    }
+
+    // limpa a lista
+    lista.clear();
+
+    return 0;
+}
+```
+
+
 
 == Links úteis ==
 

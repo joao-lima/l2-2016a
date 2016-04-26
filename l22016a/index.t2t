@@ -140,6 +140,39 @@ Para entender seu uso, [ver abaixo sobre listas #stl].
 
 
 
+== Sexto trabalho ==
+Este trabalho (T6) consiste na implementação da parte básica de uma **calculadora**.
+Para tanto, é preciso completar as funções do arquivo ``Calculadora.hpp``.
+
+A calculadora tem duas pilhas, uma de operadores e outra de operandos.
+Um operando é sempre colocado na pilha de operandos.
+Um operador, antes de ser colocado na pilha de operadores, verifica o
+operador no topo e, caso o operador tenha maior precedência, opera-o sobre
+os dois operandos do topo e coloca o resultado no topo da pilha de operandos,
+até que a pilha esteja vazia ou que o operador do topo seja um abre-parênteses.
+O fecha parênteses opera todos os operadores do topo até encontrar um
+abre parênteses. O método ``fim()`` opera todos os operadores até esvaziar a 
+pilha de operadores.
+
+Um exemplo da expressão ``3/2+1``:
++ empilha 3.
++ empilha '/'.
++ empilha 2.
++ antes de empilha '+', verifica-se que '/' tem precedência sobre
+'+' e se calcula todos os operadores da pilha (``3/2``), sendo o resultado
+empilhado na pilha de operandos (1.5). Após, empilha '+'.
++ empilha 1.
++ termina o cálculo (``1.5+1``). 
+
+
+Arquivos do trabalho: [t6.tgz arquivos/t6.tgz].
+
+**ENTREGA: 9/04/2016 (2a feira)**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T6
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
 
 == Entrega de trabalhos ==[entrega]
 Crie um diretório para os fontes, por exemplo ``t1-LOGIN`` sendo 

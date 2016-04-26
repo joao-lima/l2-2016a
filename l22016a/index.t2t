@@ -154,6 +154,14 @@ O fecha parênteses opera todos os operadores do topo até encontrar um
 abre parênteses. O método ``fim()`` opera todos os operadores até esvaziar a 
 pilha de operadores.
 
+As três regras básicas para resolução da calculadora são:
++ Para cada operador, 2 operandos devem existir. 
++ Se encontrar ')' resolve tudo até encontrar o '(' correspondente.
++ Se o operador do topo da pilha tem maior precedência que 
+o atual (a ser empilhado), resolve a pilha até não 
+haver mais operadores com maior precedência.
+
+
 Um exemplo da expressão ``3/2+1``:
 + empilha 3.
 + empilha '/'.
@@ -167,7 +175,7 @@ empilhado na pilha de operandos (1.5). Após, empilha '+'.
 
 Arquivos do trabalho: [t6.tgz arquivos/t6.tgz].
 
-**ENTREGA: 9/04/2016 (2a feira)**
+**ENTREGA: 9/05/2016 (2a feira)**
 - **Email: jvlima+elc1067 em inf.ufsm.br**
 - Assunto: elc1067 T6
 - Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].

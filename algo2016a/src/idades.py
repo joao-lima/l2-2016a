@@ -24,7 +24,7 @@ menor18 = 0
 # Nao modifique o codigo abaixo!
 if contador > 2:
 	# make a square figure and axes
-	figure(1, figsize=(6,6))
+	pyplot.figure(1, figsize=(6,6))
 	menor18 = menor18/float(contador)*100.
 	maior18 = maior18/float(contador)*100.
 	legenda = ['Menor de 18', 'Maior de 18']

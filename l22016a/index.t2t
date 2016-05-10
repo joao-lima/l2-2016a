@@ -181,6 +181,20 @@ Arquivos do trabalho: [t6.tgz arquivos/t6.tgz].
 - Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
 
 
+== Sétimo trabalho ==
+Este trabalho (**T7**) consiste na implementação da parte gráfica da calculadora
+implementada no T6.
+A interface gráfica fica a critério de cada aluno, desde que seja utilizado
+[Allegro http://liballeg.org] na implementação.
+
+Arquivos de exemplo (igual aos arquivos do T4): [t7.tgz arquivos/t7.tgz].
+
+**ENTREGA: 30/05/2016 (2a feira)**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T7
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
 
 == Entrega de trabalhos ==[entrega]
 Crie um diretório para os fontes, por exemplo ``t1-LOGIN`` sendo 

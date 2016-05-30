@@ -195,6 +195,42 @@ Arquivos de exemplo (igual aos arquivos do T4): [t7.tgz arquivos/t7.tgz].
 - Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
 
 
+== Oitavo trabalho ==
+Este trabalho (**T8**) consiste em um complemento do T5 para o jogo 
+Space Invaders: implementação dos invasores do jogo em uma TAD de
+**árvore binária**.
+A organização dos invasores na tela deve refletir sua
+posição na árvore. 
+
+A árvore deve ser implementada nos arquivos ``arvore.hpp`` e 
+``arvore.cpp``, e ter os métodos:
+- ``insere`` para inserir um nó.
+- ``remove`` remove o nó da árvore.
+- ``contem`` retorna verdadeiro se árvore contém o nó buscado.
+
+Nomes e agumentos podem variar conforme a implementação.
+
+
+**ENTREGA: 13/06/2016 (2a feira)**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T8
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
+== Nono trabalho ==
+Este trabalho (**T9**) consiste em um complemento do T8 para o jogo 
+Space Invaders: implementação dos invasores do jogo em uma TAD de
+**árvore AVL**.
+Nessa versão, a árvore deve ser balanceada a cada invasor atingido.
+
+A árvore AVL deve ter os mesmos métodos da árvore binária do T9.
+
+**ENTREGA: 7/07/2016 (5a feira)**
+- **Email: jvlima+elc1067 em inf.ufsm.br**
+- Assunto: elc1067 T9
+- Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
+
+
 
 == Entrega de trabalhos ==[entrega]
 Crie um diretório para os fontes, por exemplo ``t1-LOGIN`` sendo 

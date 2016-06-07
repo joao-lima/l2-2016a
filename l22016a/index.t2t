@@ -16,7 +16,7 @@ Turmas SI1 e SI2, primeiro semestre de 2016
 
 = Trabalhos = 
 
-== Primeiro trabalho ==
+== T1 - notas e alunos ==
 O programa fará leitura de dois arquivos texto: ``alunos.txt`` e ``notas.txt``.
 O ``alunos.txt`` terá o formato:
 ```
@@ -60,7 +60,7 @@ Nas dicas abaixo, procure sobre [linha de comando #cxx_argv],
 - Plágio, zero.
 
 
-== Segundo trabalho ==
+== T2 - campo minado ==
 Este trabalho consiste na implementação do jogo **Campo Minado** (//Minesweeper//).
 Os quadrados devem ser implementados com uma estrutura **matriz**, e
 as minas do jogo devem ser distribuídas aleatóriamente.
@@ -88,7 +88,7 @@ Comandos do jogo:
 - Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
 
 
-== Terceiro trabalho ==
+== T3 - TAD vetor ==
 Este trabalho consiste na implementação da TAD ``Vetor``.
 Essa estrutura faz uso de uma [template C++ #cxx_template]
 sendo que o tipo armazenado não é definido até a compilação do programa.
@@ -105,7 +105,7 @@ Arquivos do trabalho: [principal.cpp arquivos/t3/principal.cpp], [vetor.hpp arqu
 - Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
 
 
-== Quarto trabalho ==
+== T4 - space invaders ==
 Este trabalho (T4) consiste na implementação do jogo **Space Invaders** usando a TAD ``Vetor``
 do T3.
 O objetivo é guardar os invasores do jogo dentro da TAD ``Vetor``, desde quando
@@ -127,7 +127,7 @@ Arquivos do trabalho: [t4.tgz arquivos/t4.tgz].
 
 
 
-== Quinto trabalho ==
+== T5 - Space Invaders com lista ==
 Este trabalho (T5) consiste em um complemento do T4 para o jogo **Space Invaders**: 
 implementação de tiros em sequência usando uma lista.
 O objetivo é guardar os tiros de laser dentro de uma ``std::list``do C++.
@@ -140,7 +140,7 @@ Para entender seu uso, [ver abaixo sobre listas #stl].
 
 
 
-== Sexto trabalho ==
+== T6 - calculadora ==
 Este trabalho (T6) consiste na implementação da parte básica de uma **calculadora**.
 Para tanto, é preciso completar as funções do arquivo ``Calculadora.hpp``.
 
@@ -181,7 +181,7 @@ Arquivos do trabalho: [t6.tgz arquivos/t6.tgz].
 - Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
 
 
-== Sétimo trabalho ==
+== T7 - calculadora gráfica ==
 Este trabalho (**T7**) consiste na implementação da parte gráfica da calculadora
 implementada no T6.
 A interface gráfica fica a critério de cada aluno, desde que seja utilizado
@@ -195,7 +195,7 @@ Arquivos de exemplo (igual aos arquivos do T4): [t7.tgz arquivos/t7.tgz].
 - Formato: tgz ou zip dos fontes, ver como [criar arquivo de entrega #entrega].
 
 
-== Oitavo trabalho ==
+== T8 - Space Invaders com árvore binária ==
 Este trabalho (**T8**) consiste em um complemento do T5 para o jogo 
 Space Invaders: implementação dos invasores do jogo em uma TAD de
 **árvore binária**.
@@ -218,7 +218,7 @@ Nomes e agumentos podem variar conforme a implementação.
 - **A avaliação também será feita em aula**, no dia 14/06/2016.
 
 
-== Nono trabalho ==
+== T9 - Space Invaders com árvore AVL ==
 Este trabalho (**T9**) consiste em um complemento do T8 para o jogo 
 Space Invaders: implementação dos invasores do jogo em uma TAD de
 **árvore AVL**.
